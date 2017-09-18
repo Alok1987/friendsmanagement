@@ -1,27 +1,21 @@
 package container;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
-import javax.validation.ConstraintViolation;
-
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.databind.annotation.JsonTypeIdResolver;
+import com.fasterxml.jackson.databind.jsontype.impl.TypeIdResolverBase;
+import lombok.*;
 import org.hibernate.validator.internal.engine.path.PathImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.databind.annotation.JsonTypeIdResolver;
-import com.fasterxml.jackson.databind.jsontype.impl.TypeIdResolverBase;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
-
+import javax.validation.ConstraintViolation;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 @Data
 @JsonTypeInfo(include = JsonTypeInfo.As.WRAPPER_OBJECT, use = JsonTypeInfo.Id.CUSTOM, property = "error", visible = true)
@@ -65,31 +59,7 @@ class ApiError {
         subErrors.add(subError);
     }
 
-    public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getDebugMessage() {
-		return debugMessage;
-	}
-
-	public void setDebugMessage(String debugMessage) {
-		this.debugMessage = debugMessage;
-	}
-
-	public HttpStatus getStatus() {
-		return status;
-	}
-
-	public void setStatus(HttpStatus status) {
-		this.status = status;
-	}
-
-	private void addValidationError(String object, String field, Object rejectedValue, String message) {
+    private void addValidationError(String object, String field, Object rejectedValue, String message) {
         addSubError(new ApiValidationError(object, field, rejectedValue, message));
     }
 
@@ -154,6 +124,7 @@ class ApiError {
             this.object = object;
             this.message = message;
         }
+        
         ApiValidationError(String object, String field, Object rejectedValue, String message) {
             this.object = object;
             this.field = field;
