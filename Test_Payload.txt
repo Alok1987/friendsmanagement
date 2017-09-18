@@ -1,5 +1,10 @@
 1-
-addFriend
+URL
+====
+http://localhost:8080/addFriend
+
+REQUEST JSON
+============
 {
   "friends":
     [
@@ -9,14 +14,23 @@ addFriend
 }
 
 2-
-fetchFriends
+URL
+====
+http://localhost:8080/fetchFriends
+REQUEST JSON
+============
 {
   "email": "andy@example.com"
 }
 
 3-
-Test Setup
-addFriend
+
+Test Setup to have a common friend i.e. "common@example.com"
+URL
+====
+http://localhost:8080/addFriend
+REQUEST JSON
+============
 {
   "friends":
     [
@@ -24,6 +38,12 @@ addFriend
       "common@example.com"
     ]
 }
+
+URL
+====
+http://localhost:8080/addFriend
+REQUEST JSON
+============
 {
   "friends":
     [
@@ -34,7 +54,11 @@ addFriend
 
 
 
-fetchCommonFriends
+URL
+====
+http://localhost:8080/fetchCommonFriends
+REQUEST JSON
+============
 {
  "friends":
     [
@@ -44,21 +68,33 @@ fetchCommonFriends
 }
 
 4-
-subscribeUpdate
+URL
+====
+http://localhost:8080/subscribeUpdate
+REQUEST JSON
+============
 {
   "requestor": "lisa@example.com",
   "target": "john@example.com"
 }
 
 5-
-blockUpdate
+URL
+====
+http://localhost:8080/blockUpdate
+REQUEST JSON
+============
 {
   "requestor": "andy@example.com",
   "target": "john@example.com"
 }
 
 6-
-getEmailListForUpdate
+URL
+====
+http://localhost:8080/getEmailListForUpdate
+REQUEST JSON
+============
 {
   "sender":  "john@example.com",
   "text": "Hello World! kate@example.com"
