@@ -1,0 +1,65 @@
+1-
+addFriend
+{
+  "friends":
+    [
+      "andy@example.com",
+      "john@example.com"
+    ]
+}
+
+2-
+fetchFriends
+{
+  "email": "andy@example.com"
+}
+
+3-
+Test Setup
+addFriend
+{
+  "friends":
+    [
+      "andy@example.com",
+      "common@example.com"
+    ]
+}
+{
+  "friends":
+    [
+      "john@example.com",
+      "common@example.com"
+    ]
+}
+
+
+
+fetchCommonFriends
+{
+ "friends":
+    [
+     "andy@example.com",
+     "john@example.com"
+    ]
+}
+
+4-
+subscribeUpdate
+{
+  "requestor": "lisa@example.com",
+  "target": "john@example.com"
+}
+
+5-
+blockUpdate
+{
+  "requestor": "andy@example.com",
+  "target": "john@example.com"
+}
+
+6-
+getEmailListForUpdate
+{
+  "sender":  "john@example.com",
+  "text": "Hello World! kate@example.com"
+}
