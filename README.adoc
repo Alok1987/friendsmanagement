@@ -45,6 +45,7 @@ For other request format please refer Test_PayLoad.txt
 
 :java_version: 1.8
 :SpringBoot Rest- Mongo Boilder plate application.
+:apache maven: Refernece:-https://maven.apache.org/install.html
 
 
 
@@ -54,7 +55,7 @@ For other request format please refer Test_PayLoad.txt
 == Create a resource representation class
 ->Download or clone a copy of project
 ->In command prompt open the folder till completed folder e.g. D:\Spring\friendsmanagement\complete
-
+-> Please make sure apache maven is installed check with "mvn -v" command
 == Running and Testing application
 
 ->Run command "mvnw spring-boot:run", it will start the project to listen on port 8080(default).
